@@ -3,7 +3,8 @@ import type { MenuItem, OrderItem } from "../types";
 
 export default function useOrder() {
     
-    const [order, setOrder] = useState<OrderItem[]>([]);
+    const [ order, setOrder ] = useState<OrderItem[]>([]);
+    const [ tip, setTip ] = useState(0);
     
     //* Agrega un item a la orden
     const addItem = (item : MenuItem) => {
@@ -31,15 +32,21 @@ export default function useOrder() {
         }
     }
 
+    // Quita productos de la orden
     const removeItem = (id : MenuItem['id']) => {
         
         setOrder( order.filter( item => item.id !== id ) );
         
     }
 
+    // Calcular propina
+
+
     return {
         order,
         addItem,
-        removeItem
+        removeItem,
+        tip,
+        setTip
     }
 }
