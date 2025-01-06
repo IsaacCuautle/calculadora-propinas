@@ -50,7 +50,7 @@ Para comenzar a trabajar con este proyecto en tu máquina local, sigue los sigui
 1. Clona este repositorio:
 
 ```bash
-  git clone https://github.com/tuusuario/calculadora-de-propinas.git
+git clone https://github.com/IsaacCuautle/calculadora-propinas.git
 ```
    
 2. Navega al directorio del proyecto:
