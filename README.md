@@ -9,6 +9,31 @@ Este proyecto fue desarrollado con **React**, **TypeScript**, **TailwindCSS** y 
 
 ## Imágenes del proyecto
 
+<div
+  class="imagenes"  
+  style="
+  display: flex;"
+>
+<img 
+  style="
+    width: 100px; 
+    heigth: 100px; "
+  src='https://github.com/user-attachments/assets/c6338585-36e3-421a-9d07-434175ab72aa'  
+/>
+<img 
+  style="
+    width: 250px; 
+    heigth: 250px;"
+  height="340"
+  src='https://github.com/user-attachments/assets/fbd1a5ce-8b83-4c85-8d72-4f313fb6a181'
+/>
+  <img 
+  style="
+    width: 500px; 
+    heigth: 250px; "
+  src='https://github.com/user-attachments/assets/5fc2b0a3-acc5-4f8a-935d-b1dd59db7cf4'
+/>
+</div>
 
 
 ## Tecnologías utilizadas
