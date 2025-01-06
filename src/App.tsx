@@ -7,7 +7,7 @@ import TipPercentageForm from "./components/TipPercentageForm"
 
 function App() {  
 
-  const { order, addItem, removeItem, tip, setTip } = useOrder();
+  const { order, addItem, removeItem, tip, setTip, placeOrder } = useOrder();
 
   return (
     <>
@@ -77,21 +77,32 @@ function App() {
             rounded-lg
             space-y-10"
         >
-          <OrderContents 
-            order = { order }
-            removeItem = { removeItem }
-          />
 
-          { /*Formulario de propinas*/}
-          <TipPercentageForm
-            setTip = { setTip }
-          />
+          {order.length > 0 ? (
+            <>
+              <OrderContents 
+              order = { order }
+              removeItem = { removeItem }
+              />
 
-          <OrderTotals
-            order = { order }
-            tip = { tip }
-            
-          />
+              { /*Formulario de propinas*/}
+              <TipPercentageForm
+                setTip = { setTip }
+                tip = {tip}
+              />
+
+              <OrderTotals
+                order = { order }
+                tip = { tip }
+                placeOrder = { placeOrder }
+              />
+            </>
+          ) : (
+            <>
+            <p className="text-center">La Orden esta Vacia</p>
+            </>
+          )}
+          
         </div>
       
       </main>

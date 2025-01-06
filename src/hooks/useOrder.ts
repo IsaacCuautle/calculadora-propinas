@@ -39,7 +39,11 @@ export default function useOrder() {
         
     }
 
-    // Calcular propina
+    // Guarda la orden y limpia la pantalla
+    const placeOrder = () => {
+        setOrder([]);
+        setTip(0);
+    }
 
 
     return {
@@ -47,6 +51,7 @@ export default function useOrder() {
         addItem,
         removeItem,
         tip,
-        setTip
+        setTip,
+        placeOrder
     }
 }
