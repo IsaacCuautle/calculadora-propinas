@@ -1,11 +1,14 @@
+import { Dispatch } from "react"
+
 import { MenuItem } from "../types"
+import { OrderActions } from "../reducers/order-reducer"
 
 type MenuItemProps = {
     item: MenuItem,
-    addItem: ( item : MenuItem ) => void
+    dispatch: Dispatch<OrderActions>
 }
 
-export default function MenuItems( { item, addItem } : MenuItemProps ) {
+export default function MenuItems( { item, dispatch } : MenuItemProps ) {
   return (
     <button
         className="
@@ -17,7 +20,7 @@ export default function MenuItems( { item, addItem } : MenuItemProps ) {
             flex
             justify-between
         "
-        onClick={() => addItem( item )}
+        onClick={ () => dispatch( { type : 'add-item', payload : { item } } ) }
     >
         <p>{item.name}</p>
         <p className="font-black">${item.price}</p>

@@ -48,41 +48,74 @@ export const InitialState : OrderState =
 export const orderReducer = ( state: OrderState = InitialState, action: OrderActions) => 
 {
     
+    //* Añade un item a la orden
     if ( action.type === 'add-item' ) 
     {
 
+        // Comprueba si ya existe un item en la orden
+        const itemExist = state.order.find( orderItem => orderItem.id === action.payload.item.id );
+
+        let order : OrderItem[] = [];
+        
+        if ( itemExist ) {
+
+            // Busca el id del item a agregar e incrementa su cantidad en uno
+            order = state.order.map( orderItem => orderItem.id === action.payload.item.id ? { ...orderItem, quantity: orderItem.quantity +1 } : orderItem )
+
+        } else {
+
+            // Castea el tipo item a order
+            const newItem : OrderItem = {
+
+                ...action.payload.item,
+                quantity: 1
+            
+            }
+
+            order = [ ...state.order, newItem ];
+
+        }
         
 
         return {
 
-            ...state
-        
+            ...state,
+            order
+
         }
 
     }
-    
+
+
+    //TODO: GUARDAR ORDEN
     if ( action.type === 'place-order' ) 
     {
 
-        
+        let order : OrderItem[] = []
+        let tip = 0
 
         return {
 
-            ...state
-        
+            ...state,
+            order,
+            tip
         }
 
     }
     
+
+    //* Quita un Item de la orden
     if ( action.type === 'remove-item' ) 
     {
 
+        let order = state.order.filter( item => item.id !== action.payload.id )
         
 
         return {
 
-            ...state
-        
+            ...state,
+            order
+            
         }
 
     }
@@ -90,11 +123,12 @@ export const orderReducer = ( state: OrderState = InitialState, action: OrderAct
     if ( action.type === 'add-tip' ) 
     {
 
-        
+        const tip = action.payload.value;
 
         return {
 
-            ...state
+            ...state,
+            tip
         
         }
 
