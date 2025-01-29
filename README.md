@@ -7,6 +7,16 @@ Este proyecto fue desarrollado con **React**, **TypeScript**, **TailwindCSS** y 
 - **States**
 - **useMemo**
 
+### Mejoras en la nueva versión 2.0.0: Implementación de useReducer
+
+En esta nueva versión, se ha optimizado la gestión del estado migrando hacia **useReducer**, lo que permite manejar la lógica de actualización de manera más estructurada y escalable. Las principales mejoras incluyen:
+
+- **Creación del reducer y definición de acciones en TypeScript**  
+  Se establecieron las acciones necesarias para manejar el estado de la aplicación de manera eficiente.  
+
+- **Manejo de la orden con useReducer**  
+  Ahora los productos se gestionan mediante acciones, facilitando la adición y eliminación de artículos.  
+
 ## Imágenes del proyecto
 
 <div
